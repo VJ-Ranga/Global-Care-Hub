@@ -15,8 +15,8 @@ if (form) {
     setTimeout(() => {
       const formPanel    = document.getElementById('formPanel');
       const successPanel = document.getElementById('successPanel');
-      if (formPanel)    formPanel.style.display    = 'none';
-      if (successPanel) successPanel.style.display = 'flex';
+      if (formPanel)    formPanel.classList.add('d-none');
+      if (successPanel) successPanel.classList.remove('d-none');
     }, 1500);
   });
 }
