@@ -575,6 +575,7 @@ body {
    FOOTER
 ════════════════════════════ */
 .footer { background: var(--dark); }
+.footer p, .footer small, .footer .text-muted { color: rgba(255,255,255,0.5) !important; }
 .footer-heading { color: rgba(255,255,255,0.9); font-size: .88rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 16px; }
 .footer-links { list-style: none; padding: 0; }
 .footer-links li { margin-bottom: 8px; }
