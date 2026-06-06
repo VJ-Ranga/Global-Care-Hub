@@ -23,10 +23,9 @@
       <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-2"><a href="contact.html" class="btn btn-primary btn-sm px-3">Get a Quote</a></li>
+        <li class="nav-item ms-lg-2"><a href="booking.html" class="btn btn-primary btn-sm px-3"><i class="fa-solid fa-calendar-check me-1"></i>Book a Service</a></li>
       </ul>
     </div>
   </div>
@@ -298,27 +297,21 @@
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="locations.html">Locations</a></li>
+          <li><a href="booking.html">Book a Service</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="col-sm-6 col-lg-3">
-        <h6 class="footer-heading">Services</h6>
-        <ul class="footer-links">
-          <li><a href="#cleaning">Home Cleaning</a></li>
-          <li><a href="#electrical">Electrical</a></li>
-          <li><a href="#plumbing">Plumbing</a></li>
-          <li><a href="#ac-repair">AC Repair</a></li>
-          <li><a href="#cctv">CCTV</a></li>
-          <li><a href="#painting">Painting</a></li>
-        </ul>
+        <h6 class="footer-heading">Service Offices</h6>
+        <ul class="footer-links" id="footerCities"></ul>
       </div>
       <div class="col-lg-3">
         <h6 class="footer-heading">Contact Us</h6>
         <ul class="footer-contact">
-          <li><i class="fa-solid fa-phone"></i><span>+1 (234) 567-890</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>info@globalcarehub.com</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+94 11 234 5678</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@globalcarehub.lk</span></li>
+          <li><i class="fab fa-whatsapp"></i><span>+94 77 123 4567</span></li>
           <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 8am – 8pm</span></li>
         </ul>
       </div>
@@ -329,8 +322,15 @@
   </div>
 </footer>
 
-<a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/data.js"></script>
 <script src="assets/main.js"></script>
+<script>
+  const fc = document.getElementById('footerCities');
+  Object.values(LOCATIONS).forEach(l => {
+    fc.innerHTML += `<li><a href="location.html?city=${l.id}"><i class="fa-solid fa-location-dot me-1 text-primary" style="font-size:.7rem"></i>${l.name}</a></li>`;
+  });
+</script>
 </body>
 </html>
