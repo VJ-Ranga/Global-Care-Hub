@@ -10,12 +10,13 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('[type=submit]');
-    const msg = document.getElementById('successMsg');
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
     setTimeout(() => {
-      form.style.display = 'none';
-      if (msg) { msg.style.display = 'block'; }
+      const formPanel    = document.getElementById('formPanel');
+      const successPanel = document.getElementById('successPanel');
+      if (formPanel)    formPanel.style.display    = 'none';
+      if (successPanel) successPanel.style.display = 'flex';
     }, 1500);
   });
 }

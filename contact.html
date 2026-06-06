@@ -89,26 +89,26 @@
 <!-- FORM + INFO -->
 <section class="section-pad">
   <div class="container">
-    <div class="row g-5">
+    <div class="row g-5 align-items-stretch">
 
       <!-- FORM -->
-      <div class="col-lg-7">
-        <div class="contact-form-wrap">
+      <div class="col-lg-7 d-flex flex-column">
+
+        <!-- Success panel (hidden by default, shown after submit) -->
+        <div id="successPanel" style="display:none" class="contact-form-wrap flex-grow-1 d-flex align-items-center justify-content-center">
+          <div class="text-center py-4">
+            <div style="width:72px;height:72px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+              <i class="fa-solid fa-circle-check fa-2x text-success"></i>
+            </div>
+            <h4 class="fw-bold text-success mb-2">Inquiry Sent!</h4>
+            <p class="text-muted mb-4">Thank you! A member of our team will contact you within 60 minutes.</p>
+            <a href="index.html" class="btn btn-primary px-4">Back to Home</a>
+          </div>
+        </div>
+
+        <div id="formPanel" class="contact-form-wrap">
           <h3 class="fw-bold mb-1">Send Us an Inquiry</h3>
           <p class="text-muted small mb-4">Fill in the form below and we'll get back to you within the hour.</p>
-
-          <!-- Success Message -->
-          <div id="successMsg" class="success-msg">
-            <div class="text-center py-5">
-              <div style="width:72px;height:72px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
-                <i class="fa-solid fa-circle-check fa-2x text-success"></i>
-              </div>
-              <h4 class="fw-bold text-success mb-2">Inquiry Sent!</h4>
-              <p class="text-muted mb-4">Thank you for reaching out. A member of our team will contact you within 60 minutes.</p>
-              <a href="index.html" class="btn btn-primary px-4">Back to Home</a>
-            </div>
-          </div>
-
           <form id="inquiryForm" novalidate>
             <div class="row g-3">
 
@@ -194,12 +194,12 @@
 
             </div>
           </form>
-        </div>
-      </div>
+        </div><!-- /formPanel -->
+      </div><!-- /col-lg-7 -->
 
       <!-- CONTACT INFO -->
-      <div class="col-lg-5">
-        <div class="contact-info-card">
+      <div class="col-lg-5 d-flex flex-column">
+        <div class="contact-info-card flex-grow-1">
           <h4 class="fw-bold text-white mb-1">Contact Information</h4>
           <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:28px;">Reach us through any of these channels.</p>
 
