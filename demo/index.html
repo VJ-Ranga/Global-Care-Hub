@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Care Hub — Home & Office Services Across Sri Lanka</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div><div class="brand-name">Global Care Hub</div><div class="brand-tagline">Trusted Services, Every Time</div></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="booking.html" class="btn btn-primary btn-sm px-3"><i class="fa-solid fa-calendar-check me-1"></i>Book a Service</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — Location First -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9" style="padding: 80px 0 60px">
+        <div class="hero-badge mb-3 d-inline-flex"><i class="fa-solid fa-location-dot text-warning me-2"></i>Available in Colombo, Kandy, Galle, Jaffna &amp; more</div>
+        <h1 class="hero-title mb-3">Home &amp; Office Services,<br>Right in Your City</h1>
+        <p class="hero-subtitle mx-auto" style="max-width:560px">Select your city to see which services are available near you — then book in minutes.</p>
+
+        <!-- LOCATION FINDER WIDGET -->
+        <div class="location-finder-widget mt-5">
+          <div class="lfw-label">Find services in your area</div>
+          <div class="lfw-body">
+            <div class="lfw-select-wrap">
+              <i class="fa-solid fa-location-dot lfw-icon"></i>
+              <select id="heroLocationSelect" class="lfw-select">
+                <option value="">Select your city...</option>
+                <option value="colombo">Colombo</option>
+                <option value="kandy">Kandy</option>
+                <option value="galle">Galle</option>
+                <option value="jaffna">Jaffna</option>
+                <option value="negombo">Negombo</option>
+                <option value="kurunegala">Kurunegala</option>
+              </select>
+            </div>
+            <button class="lfw-btn" onclick="goToLocation()">
+              <i class="fa-solid fa-search me-2"></i>Show Services
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick city links -->
+        <div class="mt-4 d-flex flex-wrap gap-2 justify-content-center">
+          <span class="text-white-50 small align-self-center me-1">Quick pick:</span>
+          <a href="location.html?city=colombo" class="city-pill">Colombo</a>
+          <a href="location.html?city=kandy" class="city-pill">Kandy</a>
+          <a href="location.html?city=galle" class="city-pill">Galle</a>
+          <a href="location.html?city=jaffna" class="city-pill">Jaffna</a>
+          <a href="location.html?city=negombo" class="city-pill">Negombo</a>
+          <a href="location.html?city=kurunegala" class="city-pill">Kurunegala</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40 Q360 80 720 40 Q1080 0 1440 40 L1440 80 L0 80 Z" fill="#f8f9fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">Simple Process</span>
+      <h2 class="section-title mt-2">How It Works</h2>
+      <p class="section-subtitle">Book a service in 3 easy steps — no hassle, no guesswork.</p>
+    </div>
+    <div class="how-steps-row">
+      <div class="how-card">
+        <div class="how-step">1</div>
+        <div class="how-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h6 class="fw-bold mb-2">Select Your City</h6>
+        <p class="small text-muted mb-0">Choose from our service offices across Sri Lanka to see what's available near you.</p>
+      </div>
+      <div class="how-arrow-h"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="how-card">
+        <div class="how-step">2</div>
+        <div class="how-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h6 class="fw-bold mb-2">Browse Services</h6>
+        <p class="small text-muted mb-0">View all services offered at your selected location — home or office.</p>
+      </div>
+      <div class="how-arrow-h"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="how-card">
+        <div class="how-step">3</div>
+        <div class="how-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <h6 class="fw-bold mb-2">Book &amp; Confirm</h6>
+        <p class="small text-muted mb-0">Pick a date, fill your details and confirm. We'll call you within 60 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR CITIES -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">Our Service Offices</span>
+      <h2 class="section-title mt-2">We Operate Across Sri Lanka</h2>
+      <p class="section-subtitle">Click your city to see available services and book directly.</p>
+    </div>
+    <div class="row g-3" id="citiesGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES WE OFFER (overview) -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">What We Offer</span>
+      <h2 class="section-title mt-2">Our Services</h2>
+      <p class="section-subtitle">Not every service is at every location — select your city to check availability.</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="d-flex justify-content-center gap-2 mb-4">
+      <button class="btn btn-primary btn-sm px-4 svc-tab active" onclick="filterServices('all', this)">All Services</button>
+      <button class="btn btn-outline-primary btn-sm px-4 svc-tab" onclick="filterServices('home', this)"><i class="fa-solid fa-house me-1"></i>Home</button>
+      <button class="btn btn-outline-primary btn-sm px-4 svc-tab" onclick="filterServices('office', this)"><i class="fa-solid fa-building me-1"></i>Office</button>
+    </div>
+
+    <div class="row g-3" id="servicesGrid">
+      <!-- Populated by JS -->
+    </div>
+    <div class="text-center mt-4">
+      <p class="text-muted small"><i class="fa-solid fa-circle-info me-1"></i> Service availability varies by location. <a href="locations.html">Check your city</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">Why Choose Us</span>
+      <h2 class="section-title mt-2">Trusted by Thousands Across Sri Lanka</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h6 class="fw-bold mb-2">Verified Professionals</h6>
+          <p class="small text-muted">Every technician is background-checked, trained and certified.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-clock"></i></div>
+          <h6 class="fw-bold mb-2">On-Time, Every Time</h6>
+          <p class="small text-muted">We respect your schedule. Punctual arrival guaranteed.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-tag"></i></div>
+          <h6 class="fw-bold mb-2">Transparent Pricing</h6>
+          <p class="small text-muted">No hidden fees. Clear quote before any work begins.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon"><i class="fa-solid fa-headset"></i></div>
+          <h6 class="fw-bold mb-2">Local Support</h6>
+          <p class="small text-muted">Each city office has a dedicated team ready to assist you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container text-center">
+    <h2 class="text-white fw-bold mb-3">Ready to Book a Service?</h2>
+    <p class="text-white-75 mb-4">Select your city and get a free quote in minutes.</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="booking.html" class="btn btn-light btn-lg px-4 fw-semibold"><i class="fa-solid fa-calendar-check me-2"></i>Book Now</a>
+      <a href="locations.html" class="btn btn-outline-light btn-lg px-4"><i class="fa-solid fa-location-dot me-2"></i>Find My City</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4 py-5">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="brand-icon brand-icon-sm"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="brand-name text-white">Global Care Hub</div>
+        </div>
+        <p class="text-muted small">Professional home and office services across Sri Lanka — one trusted brand, multiple cities.</p>
+        <div class="social-links mt-3">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="booking.html">Book a Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6 class="footer-heading">Service Offices</h6>
+        <ul class="footer-links" id="footerCities"></ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="footer-heading">Contact Us</h6>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-phone"></i><span>+94 11 234 5678</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@globalcarehub.lk</span></li>
+          <li><i class="fab fa-whatsapp"></i><span>+94 77 123 4567</span></li>
+          <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 8am – 8pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0 small text-muted">&copy; 2026 Global Care Hub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  // Build cities grid
+  const citiesGrid = document.getElementById('citiesGrid');
+  Object.values(LOCATIONS).forEach(loc => {
+    citiesGrid.innerHTML += `
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="location.html?city=${loc.id}" class="city-office-card">
+          <div class="city-office-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="city-office-name">${loc.name}</div>
+          <div class="city-office-region">${loc.region}</div>
+          <div class="city-office-count">${loc.services.length} services</div>
+        </a>
+      </div>`;
+  });
+
+  // Build services grid
+  const servicesGrid = document.getElementById('servicesGrid');
+  Object.values(SERVICES).forEach(s => {
+    servicesGrid.innerHTML += `
+      <div class="col-6 col-md-4 col-lg-3 svc-item" data-cat="${s.category}">
+        <div class="svc-overview-card">
+          <div class="svc-overview-icon" style="background:${s.bg};color:${s.color}">
+            <i class="fa-solid ${s.icon}"></i>
+          </div>
+          <div class="svc-overview-name">${s.name}</div>
+          <div class="svc-overview-cat">${s.category === 'home' ? 'Home Service' : 'Office Service'}</div>
+        </div>
+      </div>`;
+  });
+
+  // Footer cities
+  const footerCities = document.getElementById('footerCities');
+  Object.values(LOCATIONS).forEach(loc => {
+    footerCities.innerHTML += `<li><a href="location.html?city=${loc.id}"><i class="fa-solid fa-location-dot me-1 text-primary" style="font-size:.7rem"></i>${loc.name}</a></li>`;
+  });
+
+  // Hero finder
+  function goToLocation() {
+    const val = document.getElementById('heroLocationSelect').value;
+    if (val) window.location.href = `location.html?city=${val}`;
+    else alert('Please select a city first.');
+  }
+
+  // Service tab filter
+  function filterServices(cat, btn) {
+    document.querySelectorAll('.svc-tab').forEach(b => b.classList.remove('active', 'btn-primary'));
+    document.querySelectorAll('.svc-tab').forEach(b => b.classList.add('btn-outline-primary'));
+    btn.classList.add('active', 'btn-primary');
+    btn.classList.remove('btn-outline-primary');
+    document.querySelectorAll('.svc-item').forEach(el => {
+      el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

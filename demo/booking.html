@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service — Global Care Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div><div class="brand-name">Global Care Hub</div><div class="brand-tagline">Trusted Services, Every Time</div></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="booking.html" class="btn btn-primary btn-sm px-3 active"><i class="fa-solid fa-calendar-check me-1"></i>Book a Service</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">Book a Service</li></ol>
+    </nav>
+    <h1>Book a Service</h1>
+    <p>Choose your city, pick a service and select a date — we confirm within 60 minutes.</p>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Step indicators -->
+        <div class="step-indicators mb-4">
+          <div class="step-ind active" id="ind1"><div class="step-ind-num">1</div><div class="step-ind-label">Location &amp; Service</div></div>
+          <div class="step-ind-line"></div>
+          <div class="step-ind" id="ind2"><div class="step-ind-num">2</div><div class="step-ind-label">Date &amp; Time</div></div>
+          <div class="step-ind-line"></div>
+          <div class="step-ind" id="ind3"><div class="step-ind-num">3</div><div class="step-ind-label">Your Details</div></div>
+          <div class="step-ind-line"></div>
+          <div class="step-ind" id="ind4"><div class="step-ind-num">4</div><div class="step-ind-label">Confirm</div></div>
+        </div>
+
+        <div class="booking-card">
+
+          <!-- ── STEP 1: Location & Service ── -->
+          <div id="step1">
+            <h5 class="fw-bold mb-1">Select Your City &amp; Service</h5>
+            <p class="text-muted small mb-4">Choose your city first — only services available there will be shown.</p>
+
+            <div class="mb-4">
+              <label class="form-label">Your City <span class="text-danger">*</span></label>
+              <div class="row g-2" id="cityCards"><!-- JS --></div>
+            </div>
+
+            <div id="serviceSection" style="display:none">
+              <label class="form-label">Select Service <span class="text-danger">*</span></label>
+              <div class="d-flex gap-2 mb-3">
+                <button class="btn btn-primary btn-sm px-3 svc-tab active" onclick="filterSvcCat('all',this)">All</button>
+                <button class="btn btn-outline-primary btn-sm px-3 svc-tab" onclick="filterSvcCat('home',this)"><i class="fa-solid fa-house me-1"></i>Home</button>
+                <button class="btn btn-outline-primary btn-sm px-3 svc-tab" onclick="filterSvcCat('office',this)"><i class="fa-solid fa-building me-1"></i>Office</button>
+              </div>
+              <div class="row g-2" id="serviceCards"><!-- JS --></div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn btn-primary px-5" onclick="goStep(2)" id="step1Next" disabled>
+                Next: Date &amp; Time <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── STEP 2: Date & Time ── -->
+          <div id="step2" style="display:none">
+            <h5 class="fw-bold mb-1">Choose a Date &amp; Time</h5>
+            <p class="text-muted small mb-4">Pick your preferred appointment slot.</p>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label">Preferred Date <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="bookDate" />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Preferred Time <span class="text-danger">*</span></label>
+                <select class="form-select" id="bookTime">
+                  <option value="">Select a time slot</option>
+                  <option>8:00 AM – 10:00 AM</option>
+                  <option>10:00 AM – 12:00 PM</option>
+                  <option>12:00 PM – 2:00 PM</option>
+                  <option>2:00 PM – 4:00 PM</option>
+                  <option>4:00 PM – 6:00 PM</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Additional Notes <span class="text-muted fw-normal">(optional)</span></label>
+                <textarea class="form-control" id="bookNotes" rows="3" placeholder="Describe your issue or any special requirements..."></textarea>
+              </div>
+            </div>
+
+            <!-- Booking summary so far -->
+            <div class="booking-mini-summary mt-4" id="summaryStep2"></div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-outline-secondary px-4" onclick="goStep(1)"><i class="fa-solid fa-arrow-left me-2"></i>Back</button>
+              <button class="btn btn-primary px-5" onclick="goStep(3)">Next: Your Details <i class="fa-solid fa-arrow-right ms-2"></i></button>
+            </div>
+          </div>
+
+          <!-- ── STEP 3: Personal Details ── -->
+          <div id="step3" style="display:none">
+            <h5 class="fw-bold mb-1">Your Contact Details</h5>
+            <p class="text-muted small mb-4">We'll use these to confirm your booking and send updates.</p>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="bookName" placeholder="e.g. Nimal Perera" />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                <input type="tel" class="form-control" id="bookPhone" placeholder="e.g. 077 123 4567" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="bookEmail" placeholder="e.g. nimal@email.com" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Preferred Contact Method</label>
+                <div class="d-flex flex-wrap gap-3 mt-1">
+                  <div class="form-check"><input class="form-check-input" type="radio" name="cm" id="cmPhone" value="phone" checked /><label class="form-check-label" for="cmPhone"><i class="fa-solid fa-phone me-1 text-primary"></i>Phone Call</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="cm" id="cmWA" value="whatsapp" /><label class="form-check-label" for="cmWA"><i class="fab fa-whatsapp me-1 text-success"></i>WhatsApp</label></div>
+                  <div class="form-check"><input class="form-check-input" type="radio" name="cm" id="cmEmail" value="email" /><label class="form-check-label" for="cmEmail"><i class="fa-solid fa-envelope me-1 text-primary"></i>Email</label></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-outline-secondary px-4" onclick="goStep(2)"><i class="fa-solid fa-arrow-left me-2"></i>Back</button>
+              <button class="btn btn-primary px-5" onclick="goStep(4)">Review Booking <i class="fa-solid fa-arrow-right ms-2"></i></button>
+            </div>
+          </div>
+
+          <!-- ── STEP 4: Review & Confirm ── -->
+          <div id="step4" style="display:none">
+            <h5 class="fw-bold mb-1">Review Your Booking</h5>
+            <p class="text-muted small mb-4">Please review your details before confirming.</p>
+
+            <div class="booking-summary-card" id="fullSummary"><!-- JS --></div>
+
+            <div class="alert alert-info d-flex gap-2 align-items-start mt-3 border-0" style="background:#e8f0fe;border-radius:10px">
+              <i class="fa-solid fa-circle-info text-primary mt-1"></i>
+              <div class="small">After confirming, our <strong id="summaryCity2">team</strong> office will call you within 60 minutes to finalise the appointment.</div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-outline-secondary px-4" onclick="goStep(3)"><i class="fa-solid fa-arrow-left me-2"></i>Back</button>
+              <button class="btn btn-success btn-lg px-5 fw-semibold" onclick="confirmBooking()"><i class="fa-solid fa-check me-2"></i>Confirm Booking</button>
+            </div>
+          </div>
+
+          <!-- ── SUCCESS ── -->
+          <div id="stepSuccess" style="display:none">
+            <div class="text-center py-4">
+              <div class="success-circle mx-auto mb-4"><i class="fa-solid fa-check fa-2x text-white"></i></div>
+              <h4 class="fw-bold text-success mb-2">Booking Confirmed!</h4>
+              <p class="text-muted mb-1">Thank you! Your booking has been received.</p>
+              <p class="text-muted mb-4">Our <strong id="successCity">team</strong> office will contact you within <strong>60 minutes</strong> to confirm your appointment.</p>
+              <div class="booking-ref mb-4">
+                <div class="small text-muted mb-1">Booking Reference</div>
+                <div class="fw-bold fs-5 text-primary" id="bookingRef">—</div>
+              </div>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="index.html" class="btn btn-primary px-4">Back to Home</a>
+                <a href="locations.html" class="btn btn-outline-primary px-4">View Locations</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /booking-card -->
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="booking-sidebar">
+          <h6 class="fw-bold mb-3">Why Book With Us?</h6>
+          <div class="sidebar-item"><div class="sidebar-icon"><i class="fa-solid fa-clock"></i></div><div><div class="fw-semibold small">60-min Confirmation</div><div class="text-muted" style="font-size:.78rem">We call you back fast.</div></div></div>
+          <div class="sidebar-item"><div class="sidebar-icon"><i class="fa-solid fa-user-check"></i></div><div><div class="fw-semibold small">Certified Professionals</div><div class="text-muted" style="font-size:.78rem">Vetted & trained staff.</div></div></div>
+          <div class="sidebar-item"><div class="sidebar-icon"><i class="fa-solid fa-tag"></i></div><div><div class="fw-semibold small">Free Quote First</div><div class="text-muted" style="font-size:.78rem">No hidden charges.</div></div></div>
+          <div class="sidebar-item mb-0"><div class="sidebar-icon"><i class="fa-solid fa-rotate-left"></i></div><div><div class="fw-semibold small">Easy Rescheduling</div><div class="text-muted" style="font-size:.78rem">Plans change — we understand.</div></div></div>
+
+          <hr class="my-4" />
+          <div id="sidebarLocInfo" style="display:none">
+            <h6 class="fw-bold mb-3">Selected Office</h6>
+            <div id="sidebarLocDetails"></div>
+            <a id="sidebarWA" href="#" target="_blank" class="btn btn-success btn-sm w-100 mt-2"><i class="fab fa-whatsapp me-2"></i>WhatsApp This Office</a>
+          </div>
+          <div id="sidebarDefault">
+            <h6 class="fw-bold mb-2">Need Help?</h6>
+            <p class="text-muted small mb-2">Call or WhatsApp us — we're happy to help you choose the right service.</p>
+            <a href="tel:+94112345678" class="btn btn-outline-primary btn-sm w-100 mb-2"><i class="fa-solid fa-phone me-2"></i>+94 11 234 5678</a>
+            <a href="https://wa.me/94771234567" target="_blank" class="btn btn-success btn-sm w-100"><i class="fab fa-whatsapp me-2"></i>WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4 py-5">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="brand-icon brand-icon-sm"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="brand-name text-white">Global Care Hub</div>
+        </div>
+        <p class="text-muted small">Professional services across Sri Lanka — one trusted brand, multiple cities.</p>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="booking.html">Book a Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6 class="footer-heading">Service Offices</h6>
+        <ul class="footer-links" id="footerCities"></ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="footer-heading">Contact</h6>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-phone"></i><span>+94 11 234 5678</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@globalcarehub.lk</span></li>
+          <li><i class="fab fa-whatsapp"></i><span>+94 77 123 4567</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p class="mb-0 small text-muted">&copy; 2026 Global Care Hub. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div id="waFloat" class="whatsapp-float" style="cursor:pointer"><i class="fab fa-whatsapp"></i></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  // ── State ──
+  let selectedCity = null;
+  let selectedService = null;
+
+  // ── Pre-fill from URL params ──
+  const params = new URLSearchParams(window.location.search);
+  const preCity = params.get('city');
+  const preSvc  = params.get('service');
+
+  // Set min date to tomorrow
+  const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+  document.getElementById('bookDate').min = tomorrow.toISOString().split('T')[0];
+  document.getElementById('bookDate').value = tomorrow.toISOString().split('T')[0];
+
+  // ── Build city selector ──
+  const cityCards = document.getElementById('cityCards');
+  Object.values(LOCATIONS).forEach(loc => {
+    cityCards.innerHTML += `
+      <div class="col-6 col-md-4">
+        <div class="city-select-card ${loc.id === preCity ? 'selected' : ''}" onclick="selectCity('${loc.id}', this)" data-city="${loc.id}">
+          <i class="fa-solid fa-location-dot text-primary mb-1"></i>
+          <div class="fw-semibold">${loc.name}</div>
+          <div class="text-muted" style="font-size:.72rem">${loc.region}</div>
+          <div class="text-primary fw-semibold" style="font-size:.75rem">${loc.services.length} services</div>
+        </div>
+      </div>`;
+  });
+
+  if (preCity && LOCATIONS[preCity]) {
+    selectCity(preCity, document.querySelector(`[data-city="${preCity}"]`));
+  }
+
+  function selectCity(id, el) {
+    selectedCity = id;
+    selectedService = null;
+    document.querySelectorAll('.city-select-card').forEach(c => c.classList.remove('selected'));
+    if (el) el.classList.add('selected');
+    buildServiceCards('all');
+    document.getElementById('serviceSection').style.display = '';
+    document.getElementById('step1Next').disabled = true;
+    updateSidebar();
+  }
+
+  function buildServiceCards(cat) {
+    if (!selectedCity) return;
+    const loc = LOCATIONS[selectedCity];
+    const container = document.getElementById('serviceCards');
+    container.innerHTML = '';
+    let filtered = loc.services.filter(id => cat === 'all' || SERVICES[id].category === cat);
+    filtered.forEach(id => {
+      const s = SERVICES[id];
+      container.innerHTML += `
+        <div class="col-sm-6">
+          <div class="svc-select-card ${selectedService === id ? 'selected' : ''}" onclick="selectService('${id}', this)" data-svc="${id}">
+            <div class="d-flex align-items-center gap-3">
+              <div class="svc-select-icon" style="background:${s.bg};color:${s.color}"><i class="fa-solid ${s.icon}"></i></div>
+              <div>
+                <div class="fw-semibold small">${s.name}</div>
+                <div class="text-muted" style="font-size:.75rem">${s.category === 'home' ? 'Home Service' : 'Office Service'}</div>
+              </div>
+              <div class="ms-auto svc-check"><i class="fa-solid fa-check-circle text-primary"></i></div>
+            </div>
+          </div>
+        </div>`;
+    });
+
+    // Re-highlight if pre-selected
+    if (selectedService) {
+      const el = document.querySelector(`[data-svc="${selectedService}"]`);
+      if (el) el.classList.add('selected');
+    }
+  }
+
+  function selectService(id, el) {
+    selectedService = id;
+    document.querySelectorAll('.svc-select-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('step1Next').disabled = false;
+  }
+
+  function filterSvcCat(cat, btn) {
+    document.querySelectorAll('.svc-tab').forEach(b => { b.classList.remove('active','btn-primary'); b.classList.add('btn-outline-primary'); });
+    btn.classList.add('active','btn-primary'); btn.classList.remove('btn-outline-primary');
+    buildServiceCards(cat);
+  }
+
+  if (preSvc && SERVICES[preSvc]) {
+    setTimeout(() => {
+      const el = document.querySelector(`[data-svc="${preSvc}"]`);
+      if (el) selectService(preSvc, el);
+    }, 100);
+  }
+
+  // ── Step navigation ──
+  function goStep(n) {
+    if (n === 2 && (!selectedCity || !selectedService)) return;
+    if (n === 3 && (!document.getElementById('bookDate').value || !document.getElementById('bookTime').value)) {
+      alert('Please select a date and time slot.'); return;
+    }
+    if (n === 4) {
+      const name = document.getElementById('bookName').value.trim();
+      const phone = document.getElementById('bookPhone').value.trim();
+      const email = document.getElementById('bookEmail').value.trim();
+      if (!name || !phone || !email) { alert('Please fill in all required fields.'); return; }
+    }
+
+    [1,2,3,4].forEach(i => {
+      document.getElementById('step'+i).style.display = i===n ? '' : 'none';
+      const ind = document.getElementById('ind'+i);
+      ind.classList.toggle('active', i === n);
+      ind.classList.toggle('done', i < n);
+    });
+
+    if (n === 2) buildSummaryStep2();
+    if (n === 4) buildFullSummary();
+
+    window.scrollTo({top: document.querySelector('.booking-card').offsetTop - 100, behavior: 'smooth'});
+  }
+
+  function buildSummaryStep2() {
+    const loc = LOCATIONS[selectedCity];
+    const svc = SERVICES[selectedService];
+    document.getElementById('summaryStep2').innerHTML = `
+      <div class="d-flex flex-wrap gap-3">
+        <div class="summary-chip"><i class="fa-solid fa-location-dot text-primary me-1"></i><strong>${loc.name}</strong></div>
+        <div class="summary-chip" style="background:${svc.bg};color:${svc.color}"><i class="fa-solid ${svc.icon} me-1"></i><strong>${svc.name}</strong></div>
+      </div>`;
+  }
+
+  function buildFullSummary() {
+    const loc = LOCATIONS[selectedCity];
+    const svc = SERVICES[selectedService];
+    const name = document.getElementById('bookName').value;
+    const phone = document.getElementById('bookPhone').value;
+    const email = document.getElementById('bookEmail').value;
+    const date = document.getElementById('bookDate').value;
+    const time = document.getElementById('bookTime').value;
+    const notes = document.getElementById('bookNotes').value;
+    const cm = document.querySelector('input[name="cm"]:checked').value;
+
+    document.getElementById('summaryCity2').textContent = loc.name;
+    document.getElementById('fullSummary').innerHTML = `
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-location-dot"></i> City / Office</div><div class="summary-val"><strong>${loc.name}</strong> — ${loc.region}</div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-wrench"></i> Service</div><div class="summary-val"><strong>${svc.name}</strong></div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-calendar"></i> Date</div><div class="summary-val"><strong>${new Date(date+'T00:00').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'})}</strong></div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-clock"></i> Time Slot</div><div class="summary-val"><strong>${time}</strong></div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-user"></i> Name</div><div class="summary-val">${name}</div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-phone"></i> Phone</div><div class="summary-val">${phone}</div></div>
+      <div class="summary-row"><div class="summary-label"><i class="fa-solid fa-envelope"></i> Email</div><div class="summary-val">${email}</div></div>
+      <div class="summary-row" style="border:none"><div class="summary-label"><i class="fa-solid fa-comment"></i> Contact via</div><div class="summary-val">${cm.charAt(0).toUpperCase()+cm.slice(1)}</div></div>
+      ${notes ? `<div class="summary-row" style="border:none"><div class="summary-label"><i class="fa-solid fa-note-sticky"></i> Notes</div><div class="summary-val">${notes}</div></div>` : ''}`;
+  }
+
+  function confirmBooking() {
+    const loc = LOCATIONS[selectedCity];
+    const ref = 'GCH-' + loc.name.substring(0,3).toUpperCase() + '-' + Date.now().toString().slice(-5);
+    document.getElementById('step4').style.display = 'none';
+    document.getElementById('stepSuccess').style.display = '';
+    document.getElementById('successCity').textContent = loc.name;
+    document.getElementById('bookingRef').textContent = ref;
+    document.getElementById('ind4').classList.add('done');
+    [1,2,3,4].forEach(i => { document.getElementById('ind'+i).classList.remove('active'); document.getElementById('ind'+i).classList.add('done'); });
+    window.scrollTo({top: document.querySelector('.booking-card').offsetTop - 100, behavior: 'smooth'});
+  }
+
+  function updateSidebar() {
+    if (!selectedCity) return;
+    const loc = LOCATIONS[selectedCity];
+    document.getElementById('sidebarDefault').style.display = 'none';
+    document.getElementById('sidebarLocInfo').style.display = '';
+    document.getElementById('sidebarLocDetails').innerHTML = `
+      <div class="sidebar-loc-item"><i class="fa-solid fa-map-marker-alt text-primary"></i>${loc.address}</div>
+      <div class="sidebar-loc-item"><i class="fa-solid fa-phone text-primary"></i>${loc.phone}</div>
+      <div class="sidebar-loc-item"><i class="fa-solid fa-clock text-primary"></i>${loc.hours}</div>`;
+    document.getElementById('sidebarWA').href = `https://wa.me/${loc.whatsapp.replace(/\D/g,'')}`;
+    document.getElementById('waFloat').onclick = () => window.open(`https://wa.me/${loc.whatsapp.replace(/\D/g,'')}`, '_blank');
+  }
+
+  // Footer cities
+  const fc = document.getElementById('footerCities');
+  Object.values(LOCATIONS).forEach(l => {
+    fc.innerHTML += `<li><a href="location.html?city=${l.id}"><i class="fa-solid fa-location-dot me-1 text-primary" style="font-size:.7rem"></i>${l.name}</a></li>`;
+  });
+</script>
+</body>
+</html>

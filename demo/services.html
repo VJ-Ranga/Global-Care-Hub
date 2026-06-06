@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Global Care Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div><div class="brand-name">Global Care Hub</div><div class="brand-tagline">Trusted Services, Every Time</div></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a href="contact.html" class="btn btn-primary btn-sm px-3">Get a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Services</li>
+      </ol>
+    </nav>
+    <h1>Our Services</h1>
+    <p>Professional home and office services delivered by certified experts across all our locations.</p>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<section class="py-4 bg-light border-bottom sticky-tabs">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <a href="#home-services" class="btn btn-primary btn-sm px-4"><i class="fa-solid fa-house me-2"></i>Home Services</a>
+      <a href="#office-services" class="btn btn-outline-primary btn-sm px-4"><i class="fa-solid fa-building me-2"></i>Office Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOME SERVICES -->
+<section class="section-pad" id="home-services">
+  <div class="container">
+    <div class="section-header mb-5">
+      <span class="section-badge">For Your Home</span>
+      <h2 class="section-title mt-2">Home Services</h2>
+      <p class="text-muted">We take care of your home so you can focus on what matters most.</p>
+    </div>
+
+    <!-- Cleaning -->
+    <div class="row g-4 mb-5 align-items-center" id="cleaning">
+      <div class="col-lg-5">
+        <div class="why-img-placeholder" style="height:300px;border-radius:14px">
+          <i class="fa-solid fa-broom fa-3x text-primary mb-3"></i>
+          <p class="text-muted small">Service photo goes here</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-icon bg-primary-soft mb-3"><i class="fa-solid fa-broom text-primary"></i></div>
+        <h3 class="fw-bold mb-2">Home Cleaning</h3>
+        <p class="text-muted mb-4">Our professional cleaning team delivers spotless results every time. Whether it's a regular weekly clean or a one-off deep clean, we bring the right equipment and eco-friendly products.</p>
+        <div class="row g-2 mb-4">
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Deep cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Regular maintenance cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Move-in / move-out cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Post-construction cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Kitchen & bathroom sanitizing</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Carpet & sofa cleaning</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary px-4">Book Cleaning Service</a>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Electrical -->
+    <div class="row g-4 mb-5 align-items-center flex-lg-row-reverse" id="electrical">
+      <div class="col-lg-5">
+        <div class="why-img-placeholder" style="height:300px;border-radius:14px">
+          <i class="fa-solid fa-bolt fa-3x text-warning mb-3"></i>
+          <p class="text-muted small">Service photo goes here</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-icon bg-warning-soft mb-3"><i class="fa-solid fa-bolt text-warning"></i></div>
+        <h3 class="fw-bold mb-2">Electrical Services</h3>
+        <p class="text-muted mb-4">Our licensed electricians handle everything from minor repairs to full home rewiring — safely and efficiently. All work meets local safety codes and standards.</p>
+        <div class="row g-2 mb-4">
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Wiring & rewiring</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Light fixture installation</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Fault detection & repair</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Switchboard upgrades</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Safety inspections</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> EV charger installation</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary px-4">Book Electrical Service</a>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Plumbing -->
+    <div class="row g-4 mb-5 align-items-center" id="plumbing">
+      <div class="col-lg-5">
+        <div class="why-img-placeholder" style="height:300px;border-radius:14px">
+          <i class="fa-solid fa-wrench fa-3x text-info mb-3"></i>
+          <p class="text-muted small">Service photo goes here</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-icon bg-info-soft mb-3"><i class="fa-solid fa-wrench text-info"></i></div>
+        <h3 class="fw-bold mb-2">Plumbing Services</h3>
+        <p class="text-muted mb-4">Fast, reliable plumbing solutions for any issue — from dripping taps to burst pipes. Our certified plumbers arrive fully equipped and ready to fix it right the first time.</p>
+        <div class="row g-2 mb-4">
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Leak detection & repair</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Drain unblocking & cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Toilet & tap installation</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Water heater installation</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Bathroom renovation plumbing</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Pipe replacement</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary px-4">Book Plumbing Service</a>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- AC Repair -->
+    <div class="row g-4 mb-5 align-items-center flex-lg-row-reverse" id="ac-repair">
+      <div class="col-lg-5">
+        <div class="why-img-placeholder" style="height:300px;border-radius:14px">
+          <i class="fa-solid fa-wind fa-3x text-primary mb-3"></i>
+          <p class="text-muted small">Service photo goes here</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-icon bg-primary-soft mb-3"><i class="fa-solid fa-wind text-primary"></i></div>
+        <h3 class="fw-bold mb-2">AC Repair & Maintenance</h3>
+        <p class="text-muted mb-4">Keep cool with our expert AC technicians. We service all major brands — whether it's a routine annual service or an emergency repair, we've got you covered.</p>
+        <div class="row g-2 mb-4">
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> AC installation (split/window)</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Annual servicing & cleaning</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Gas refilling (all types)</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Fault diagnostics & repair</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Remote control programming</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> All major brands supported</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary px-4">Book AC Service</a>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- CCTV -->
+    <div class="row g-4 align-items-center" id="cctv">
+      <div class="col-lg-5">
+        <div class="why-img-placeholder" style="height:300px;border-radius:14px">
+          <i class="fa-solid fa-camera fa-3x text-danger mb-3"></i>
+          <p class="text-muted small">Service photo goes here</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-icon bg-danger-soft mb-3"><i class="fa-solid fa-camera text-danger"></i></div>
+        <h3 class="fw-bold mb-2">CCTV & Camera Installation</h3>
+        <p class="text-muted mb-4">Protect your home with a professionally installed surveillance system. We design, supply, and install camera systems tailored to your property's layout and security needs.</p>
+        <div class="row g-2 mb-4">
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> HD & 4K camera installation</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> DVR / NVR setup</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Remote mobile viewing setup</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Wired & wireless systems</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Night vision cameras</div></div>
+          <div class="col-sm-6"><div class="service-feature"><i class="fa-solid fa-check-circle"></i> Maintenance & upgrades</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary px-4">Book CCTV Installation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE SERVICES -->
+<section class="section-pad bg-light" id="office-services">
+  <div class="container">
+    <div class="section-header mb-5">
+      <span class="section-badge">For Your Business</span>
+      <h2 class="section-title mt-2">Office Services</h2>
+      <p class="text-muted">Keep your workplace clean, safe, and productive with our commercial service solutions.</p>
+    </div>
+    <div class="row g-4">
+      <!-- Office Cleaning -->
+      <div class="col-md-6 col-lg-4" id="office-cleaning">
+        <div class="service-detail-card h-100">
+          <div class="service-detail-header">
+            <div class="service-icon bg-primary-soft mb-3"><i class="fa-solid fa-building text-primary"></i></div>
+            <h5 class="fw-bold mb-1">Office Cleaning</h5>
+            <p class="text-muted small mb-0">Commercial cleaning for all business sizes</p>
+          </div>
+          <div class="service-detail-body">
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Daily & weekly cleaning plans</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Reception & common areas</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Washroom sanitizing</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Floor mopping & vacuuming</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Window & glass cleaning</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Waste disposal management</div>
+            <a href="contact.html" class="btn btn-primary btn-sm mt-4 px-4">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+      <!-- Office Electrical -->
+      <div class="col-md-6 col-lg-4" id="office-electrical">
+        <div class="service-detail-card h-100">
+          <div class="service-detail-header">
+            <div class="service-icon bg-warning-soft mb-3"><i class="fa-solid fa-plug text-warning"></i></div>
+            <h5 class="fw-bold mb-1">Office Electrical</h5>
+            <p class="text-muted small mb-0">Commercial electrical solutions for businesses</p>
+          </div>
+          <div class="service-detail-body">
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Commercial wiring & cabling</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Lighting system installation</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Power distribution boards</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Emergency lighting systems</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> UPS & backup power setup</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Annual safety inspections</div>
+            <a href="contact.html" class="btn btn-primary btn-sm mt-4 px-4">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+      <!-- Painting -->
+      <div class="col-md-6 col-lg-4" id="painting">
+        <div class="service-detail-card h-100">
+          <div class="service-detail-header">
+            <div class="service-icon bg-success-soft mb-3"><i class="fa-solid fa-paint-roller text-success"></i></div>
+            <h5 class="fw-bold mb-1">Painting</h5>
+            <p class="text-muted small mb-0">Interior & exterior painting for offices</p>
+          </div>
+          <div class="service-detail-body">
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Interior wall painting</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Exterior facade painting</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Premium quality paints used</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Surface preparation & priming</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Wallpaper removal & painting</div>
+            <div class="service-feature"><i class="fa-solid fa-check-circle"></i> Minimal business disruption</div>
+            <a href="contact.html" class="btn btn-primary btn-sm mt-4 px-4">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container text-center">
+    <h2 class="text-white fw-bold mb-3">Not Sure Which Service You Need?</h2>
+    <p class="text-white-75 mb-4">Contact us and our team will assess your needs and recommend the right solution.</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="contact.html" class="btn btn-light btn-lg px-4 fw-semibold">Get a Free Quote</a>
+      <a href="locations.html" class="btn btn-outline-light btn-lg px-4">Find Your Branch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4 py-5">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="brand-icon brand-icon-sm"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="brand-name text-white">Global Care Hub</div>
+        </div>
+        <p class="text-muted small">High-quality, reliable, and affordable essential services under one roof.</p>
+        <div class="social-links mt-3">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6 class="footer-heading">Services</h6>
+        <ul class="footer-links">
+          <li><a href="#cleaning">Home Cleaning</a></li>
+          <li><a href="#electrical">Electrical</a></li>
+          <li><a href="#plumbing">Plumbing</a></li>
+          <li><a href="#ac-repair">AC Repair</a></li>
+          <li><a href="#cctv">CCTV</a></li>
+          <li><a href="#painting">Painting</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="footer-heading">Contact Us</h6>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-phone"></i><span>+1 (234) 567-890</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@globalcarehub.com</span></li>
+          <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 8am – 8pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0 small text-muted">&copy; 2026 Global Care Hub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
